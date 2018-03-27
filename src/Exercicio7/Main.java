@@ -34,7 +34,7 @@ public class Main {
         String nome = sc.next();
         System.out.println(agenda.buscarContatoPeloNome(nome).toString());
         
-        System.out.println("Gostaria de apagar o mesmo? "
+        System.out.println("Gostaria de apagar este contato? "
                           + "'s' para SIM ou qualquer outro botão para NÃO");
         boolean resposta =  sc.next().matches("s");
         agenda.excluirContatoPeloNome(resposta, nome);

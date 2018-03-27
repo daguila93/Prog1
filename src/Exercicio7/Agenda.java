@@ -11,10 +11,10 @@ package Exercicio7;
  */
 public class Agenda {
 
-    Contato contatos[] = new Contato[5];
+    Contato[] contatos = new Contato[5];
 
     protected void adicionarNovoContato(Contato contato) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             if (contatos[i] == null) {
                 contatos[i] = contato;
                 break;
@@ -26,12 +26,10 @@ public class Agenda {
     }
 
     protected Contato buscarContatoPeloNome(String nome) {
-        Contato contato1 = null;
         
             for (Contato contato : contatos) {
                 if (contato.getNome().equals(nome)) {
-                    contato1 = contato;
-                    break;
+                    return contato;
                 } else {
                     System.out.println("Não foi possível encontrar esse registro.");
                     System.exit(0);
@@ -39,18 +37,18 @@ public class Agenda {
             }
         
 
-        return contato1;
+        return null;
     }
 
     protected void excluirContatoPeloNome(Boolean resposta, String nome) {
         try {
-            if (resposta == true) {
+            if (resposta) {
                 for (int i = 0; i < contatos.length; i++) {
                     contatos[i] = null;
                     System.out.println("Contato apagado com sucesso!");
                     break;
                 }
-            } else if (resposta == false) {
+            } else{
                 System.out.println("Ok, você não quer exluí-lo pois não digitou 's'\n Fim do Programa.");
             }
         } catch (Exception e) {
